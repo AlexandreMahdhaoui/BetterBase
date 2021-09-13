@@ -28,3 +28,12 @@ class MongoDbAdapter(metaclass=DbAdapterType):
 
     def delete_one(self, filter_):
         return self._db_client.delete_one(filter_)
+
+    def insert_many(self):
+        pass
+
+    def update_many(self):
+        pass
+
+    def delete_many(self):
+        pass

@@ -3,13 +3,12 @@ from abc import ABC
 
 from better_base.adapters.database_adapter import DatabaseAdapter
 from better_base.adapters.db_adapter_type import DbAdapterType
-from better_manager.meta_conf.base_meta_conf import BaseMetaConf
 
 
 class Bootstrap(ABC):
     _name: str
     _db_adapter: DatabaseAdapter = DatabaseAdapter
-    _meta_conf: BaseMetaConf
+    _meta_conf: dict
     _namespace = typing.Mapping[str, typing.Any]
 
     @classmethod

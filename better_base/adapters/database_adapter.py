@@ -8,3 +8,13 @@ class DatabaseAdapter(Subscriptable):
 
     def __class_getitem__(cls, item) -> DbAdapterType:
         return cls._dict()[item]
+
+    def __iter__(self):
+        self._n_iter = 0
+        self._max_iter = len(self._dict())
+        return self
+
+    def __next__(self):
+        if self._n_iter <= self._max_iter:
+            return self._dict().items()[self._n_iter]
+        raise StopIteration
