@@ -1,13 +1,9 @@
-from better_base.adapters.db_adapter_type import DbAdapterType
 from better_base.adapters.mongo_db_adapter import MongoDbAdapter
 from better_base.utils.subscriptable_class import Subscriptable
 
 
 class DbAdapter(Subscriptable):
     mongo_db = MongoDbAdapter
-
-    def __getitem__(self, item) -> DbAdapterType:
-        return self._dict()[item]
 
     def __iter__(self):
         self._n_iter = -1

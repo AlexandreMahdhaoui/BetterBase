@@ -20,7 +20,7 @@ class TestDbAdapters:
             [self._test(x) for x in self._methods]
 
     def _test(self, method: str):
-        test = getattr(self._adapter, method)(self.test_data[method])
+        test = getattr(self._adapter, method)(self._adapter, self.test_data[method])
         assertion = self.assertion_data[method]
         assert test == assertion
 
@@ -29,8 +29,8 @@ class TestDbAdapters:
         cnx_str = os.getenv('CNX_STR')
         db_name = os.getenv('DB_NAME')
         collection = os.getenv('COLLECTION')
-        self._adapter: DbAdapterType = DbAdapter()[db_type]
-        self._adapter.__init__(cnx_str, db_name, collection)
+        self._adapter: DbAdapterType = DbAdapter[db_type]
+        self._adapter.__init__(self._adapter, cnx_str, db_name, collection)
 
     @pytest.fixture()
     def fixture(self):

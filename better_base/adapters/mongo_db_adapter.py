@@ -3,13 +3,9 @@ from pymongo import MongoClient
 from better_base.adapters.db_adapter_type import DbAdapterType
 
 
-class MongoDbAdapter(metaclass=DbAdapterType):
-    def __init__(
-            self,
-            cnx_str,
-            db_name,
-            collection
-    ):
+class MongoDbAdapter(DbAdapterType):
+
+    def __init__(self, cnx_str, db_name, collection):
         self._db_client: MongoClient = MongoClient(cnx_str)
         self._db_client = self._db_client[db_name]
         self._db_client = self._db_client[collection]
