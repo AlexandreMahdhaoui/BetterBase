@@ -1,13 +1,13 @@
 import typing
 from abc import ABC
 
-from better_base.adapters.database_adapter import DatabaseAdapter
+from better_base.adapters.db_adapter import DbAdapter
 from better_base.adapters.db_adapter_type import DbAdapterType
 
 
 class Bootstrap(ABC):
     _name: str
-    _db_adapter: DatabaseAdapter = DatabaseAdapter
+    _db_adapter: DbAdapter = DbAdapter
     _meta_conf: dict
     _namespace = typing.Mapping[str, typing.Any]
 

@@ -1,0 +1,110 @@
+{
+  "test_data": {
+    "insert_one": {
+      "_id": "0",
+      "name": "Camembert",
+      "localisation": {
+        "country": "France",
+        "region": "Normandie"
+      },
+      "gastronomy": {
+        "smell": [
+          "soft",
+          "medium",
+          "hard"
+        ],
+        "taste": [
+          "good",
+          "smooth"
+        ],
+        "similar_cheese": "__NODE__az13e12e3jae93z30J28zE="
+      },
+      "price": "6.01",
+      "should_be": "excluded_by_projection",
+      "input_exclude": "blabla",
+      "output_exclude": "blablabla"
+    },
+    "insert_many": [
+      {
+        "_id": "1",
+        "name": "Maroilles",
+        "localisation": {
+          "country": "France",
+          "region": "Picardie"
+        },
+        "gastronomy": {
+          "smell": "strong",
+          "taste": "Very good",
+          "similar_cheese": [
+            "__NODE__az13e12e3jae93z30J28zE=",
+            "__NODE__J30a2e3jaz18zEe12393ze="
+          ]
+        },
+        "price": "5.98",
+        "should_be": "excluded_by_projection",
+        "input_exclude": "blabla",
+        "output_exclude": "blablabla"
+      },
+      {
+        "_id": "2",
+        "name": "Maroilles",
+        "localisation": {
+          "country": "France",
+          "region": "Picardie"
+        },
+        "gastronomy": {
+          "smell": "strong",
+          "taste": "Very good",
+          "similar_cheese": [
+            "__NODE__az13e12e3jae93z30J28zE=",
+            "__NODE__J30a2e3jaz18zEe12393ze="
+          ]
+        },
+        "price": "5.98",
+        "should_be": "excluded_by_projection",
+        "input_exclude": "blabla",
+        "output_exclude": "blablabla"
+      }
+    ],
+    "find_one": {
+
+    },
+    "find_all": {
+
+    },
+    "update_one": {
+
+    },
+    "update_many": {
+
+    },
+    "delete_one": {
+
+    },
+    "delete_many": {
+
+    }
+  },
+  "assertion_data": {
+    "insert_one": null,
+    "insert_many": null,
+    "find_one": {
+
+    },
+    "find_all": {
+
+    },
+    "update_one": {
+
+    },
+    "update_many": {
+
+    },
+    "delete_one": {
+
+    },
+    "delete_many": {
+
+    }
+  }
+}

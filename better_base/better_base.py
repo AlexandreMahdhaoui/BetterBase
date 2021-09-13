@@ -1,7 +1,6 @@
 import typing
 
 from better_base.adapters.db_adapter_type import DbAdapterType
-from better_manager.meta_conf.base_meta_conf import BaseMetaConf
 from better_base.bootstrap import Bootstrap
 from better_base.namespace_model import NamespaceModel
 
@@ -25,7 +24,7 @@ class BetterBase(Bootstrap):
             namespace
     ):
         self._name = name
-        self._meta_conf: BaseMetaConf = namespace[name]['meta_conf']
+        self._meta_conf = namespace[name]['meta_conf']
 
     def __getitem__(self, item) -> NamespaceModel:
         return self._private_namespace.get(item)
