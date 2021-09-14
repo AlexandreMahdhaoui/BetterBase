@@ -10,14 +10,18 @@ class MongoDbAdapter(DbAdapterType):
         self._db_client = self._db_client[db_name]
         self._db_client = self._db_client[collection]
 
-    def find(self, document):
-        return self._db_client.find(document)
+    def find(self, projection, filter_):
+        return self._db_client.find(projection, filter_)
 
-    def find_one(self, document):
-        return self._db_client.find_one(document)
+    def find_one(self, projection, filter_):
+        return self._db_client.find_one(projection, filter_)
 
     def insert_one(self, document):
-        return self._db_client.insert_one(document)
+        result = self._db_client.insert_one(document)
+        return {
+            'id': result.inserted_id,
+            'acknowledged': result.acknowledged
+        }
 
     def update_one(self, filter_, update):
         return self._db_client.update_one(filter_, update)
@@ -25,8 +29,12 @@ class MongoDbAdapter(DbAdapterType):
     def delete_one(self, filter_):
         return self._db_client.delete_one(filter_)
 
-    def insert_many(self):
-        pass
+    def insert_many(self, documents):
+        result = self._db_client.insert_many(documents)
+        return {
+            'ids': result.inserted_ids,
+            'acknowledged': result.acknowledged
+        }
 
     def update_many(self):
         pass

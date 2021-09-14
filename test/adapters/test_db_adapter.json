@@ -86,8 +86,14 @@
     }
   },
   "assertion_data": {
-    "insert_one": null,
-    "insert_many": null,
+    "insert_one": {
+      "id": "0",
+      "acknowledged": true
+    },
+    "insert_many": {
+      "ids": ["1", "2"],
+      "acknowledged": true
+    },
     "find_one": {
 
     },

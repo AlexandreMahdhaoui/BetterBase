@@ -22,6 +22,8 @@ class TestDbAdapters:
     def _test(self, method: str):
         test = getattr(self._adapter, method)(self._adapter, self.test_data[method])
         assertion = self.assertion_data[method]
+        print(method)
+        print(test)
         assert test == assertion
 
     def _get_config(self, db_type: str):
