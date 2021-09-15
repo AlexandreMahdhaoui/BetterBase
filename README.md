@@ -1,6 +1,6 @@
 # BetterBase
 
-BetterBase is an API providing a namespace of database adapters for 
+BetterBase is an API providing a namespace of database-adapters for 
 microservices.
 
 ### Create a BetterBase instance from a BetterManager instance:
